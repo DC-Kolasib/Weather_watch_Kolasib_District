@@ -91,10 +91,10 @@
                 <div id="map-view" class="hidden">
                     <div class="map-container" id="map-root"></div>
                     <div class="mt-4 flex flex-wrap gap-4 text-[10px] text-slate-500 font-bold uppercase p-3 bg-slate-800/30 rounded-lg">
-                        <div class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-green-500"></span> Normal / No Adverse</div>
-                        <div class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-yellow-500"></span> Not Severe / Light Rain</div>
-                        <div class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-orange-500"></span> Severe / Heavy Rain</div>
-                        <div class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-red-500"></span> Very Severe / Critical</div>
+                        <div class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-green-500"></span> NO WARNING (NO ACTION)</div>
+                        <div class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-yellow-500"></span> WATCH (BE UPDATED)</div>
+                        <div class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-orange-500"></span> ALERT (BE PREPARED)</div>
+                        <div class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-red-500"></span> WARNING (TAKE ACTION)</div>
                     </div>
                 </div>
             </div>
@@ -341,7 +341,7 @@
                     <div class="bg-slate-800/20 rounded-2xl border border-slate-700 p-6">
                         <div class="flex items-center justify-between mb-6">
                             <h2 class="text-xl font-bold text-blue-400">${v.village}</h2>
-                            <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Village Forecast</span>
+                            <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Village/Town Wise Forecast</span>
                         </div>
                         <div class="mb-8">
                             <h4 class="text-[10px] font-bold text-slate-500 mb-4 uppercase">Next 72 Hours (3 Hourly)</h4>
@@ -358,7 +358,7 @@
                             </div>
                         </div>
                         <div>
-                            <h4 class="text-[10px] font-bold text-slate-500 mb-4 uppercase">7-Day Outlook</h4>
+                            <h4 class="text-[10px] font-bold text-slate-500 mb-4 uppercase">6-Days Outlook</h4>
                             <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3">
                                 ${daily.map(d => `
                                     <div class="bg-slate-900/50 rounded-xl p-3 text-center border border-slate-700/30">
