@@ -161,11 +161,11 @@
             
             // Priority: Red (4) > Orange (3) > Yellow (2) > Green (1)
             // Wind thresholds
-            if (wind > 117 || rain >= 115.6) return { level: 4, color: '#ef4444', label: 'VERY SEVERE' };
-            if (wind >= 62 || rain >= 64.5) return { level: 3, color: '#f97316', label: 'SEVERE' };
-            if (wind >= 52 || rain >= 15.6) return { level: 2, color: '#eab308', label: 'MODERATE' };
+            if (wind >= 62 || rain >= 204.5) return { level: 4, color: '#ef4444', label: 'RED ALERT(TAKE ACTION)' };
+            if (wind >= 52 || rain >= 115.6) return { level: 3, color: '#f97316', label: 'ORANGE ALERT(BE PREPARED)' };
+            if (wind >= 30 || rain >= 15.6) return { level: 2, color: '#eab308', label: 'YELLOW ALERT(BE UPDATED)' };
             
-            return { level: 1, color: '#22c55e', label: 'NORMAL' };
+            return { level: 1, color: '#22c55e', label: 'GREEN(NO ACTION)' };
         }
 
         async function fetchData() {
