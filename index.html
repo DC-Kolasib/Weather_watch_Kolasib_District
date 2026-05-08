@@ -51,12 +51,19 @@
                         <p class="text-[10px] text-slate-400 font-semibold uppercase tracking-[0.2em]">KDDMA Disaster Management Authority</p>
                     </div>
                 </div>
-
+		<!-- IMD Link Button -->
+                        <a href="https://mausam.imd.gov.in/index_en.php" target="_blank" class="flex items-center gap-2 bg-slate-900 border border-slate-700 hover:border-blue-500 px-4 py-1.5 text-sm font-semibold rounded-lg transition-			all text-slate-400 hover:text-white">
+                            <span>Go to IMD website</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 			16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/><path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 				1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/></svg>
+                        </a>
                 <div class="flex flex-wrap items-center justify-center gap-3 w-full lg:w-auto">
-                    <nav class="flex bg-slate-900 rounded-lg p-1 border border-slate-700">
-                        <button id="nav-live" class="nav-btn nav-active px-4 py-1.5 text-sm font-semibold rounded-md transition-all">Live</button>
-                        <button id="nav-forecast" class="nav-btn px-4 py-1.5 text-sm font-semibold rounded-md transition-all text-slate-400 hover:text-white">Forecast</button>
-                    </nav>
+                    <div class="flex gap-2">
+                        <nav class="flex bg-slate-900 rounded-lg p-1 border border-slate-700">
+                            <button id="nav-live" class="nav-btn nav-active px-4 py-1.5 text-sm font-semibold rounded-md transition-all">Live</button>
+                            <button id="nav-forecast" class="nav-btn px-4 py-1.5 text-sm font-semibold rounded-md transition-all text-slate-400 hover:text-white">Forecast</button>
+                        </nav>
+                        
+                    </div>
 
                     <div id="view-toggle-container" class="flex bg-slate-900 rounded-lg p-1 border border-slate-700">
                         <button id="view-cards" class="p-1.5 rounded-md bg-blue-600 text-white"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3zm2 1v3h4V4H3zm5 0v3h5V4H8zm5 4H8v3h5V8zM3 8v3h4V8H3z"/></svg></button>
@@ -126,24 +133,24 @@
         const API_KEY = 'b19cfc78964302e5d2486bacebf36b62'; 
         const VILLAGES = [
             { name: 'Bairabi', lat: 24.18796, lon: 92.53656 }, { name: 'Bilkhawthlir', lat: 24.33558, lon: 92.71965 },
-                { name: 'Bualpui North', lat: 24.09464, lon: 92.68256 }, { name: 'Buhchangphai', lat: 24.33581, lon: 92.65671 },
-                { name: 'Bukpui', lat: 24.08495, lon: 92.79414 }, { name: 'Bukvannei', lat: 24.29745, lon: 92.64113 },
-                { name: 'Hortoki', lat: 24.06256, lon: 92.59937 }, { name: 'Kawnpui', lat: 24.04, lon: 92.67889 },
-                { name: 'Khamrang', lat: 23.93383, lon: 92.65453 }, { name: 'Kolasib', lat: 24.22396, lon: 92.68 },
-                { name: 'Lungdai', lat: 23.88065, lon: 92.74031 }, { name: 'Lungmuat', lat: 23.96759, lon: 92.77998 },
-                { name: 'Meidum', lat: 24.17742, lon: 92.57615 }, { name: 'Mualkhang', lat: 23.89796, lon: 92.67426 },
-                { name: 'N. Chawnpui', lat: 24.37488, lon: 92.77978 }, { name: 'N. Chhimluang', lat: 24.38689, lon: 92.71726 },
-                { name: 'New Builum', lat: 24.24249, lon: 92.69339 }, { name: 'Nisapui', lat: 23.93387, lon: 92.75716 },
-                { name: 'North Chaltlang', lat: 24.02675, lon: 92.76832 }, { name: 'North Hlimen', lat: 24.23397, lon: 92.80741 },
-                { name: 'North Thinglian', lat: 24.31128, lon: 92.62357 }, { name: 'Pangbalkawn', lat: 24.20747, lon: 92.60701 },
-                { name: 'Phainuam', lat: 24.46842, lon: 92.78064 }, { name: 'Phaisen', lat: 24.38484, lon: 92.67983 },
-                { name: "Saihapui 'K'", lat: 24.27856, lon: 92.64152 }, { name: "Saihapui 'V'", lat: 24.47299, lon: 92.78644 },
-                { name: 'Saiphai', lat: 24.40314, lon: 92.79489 }, { name: 'Saipum', lat: 24.35294, lon: 92.84906 },
-                { name: 'Serkhan', lat: 23.91147, lon: 92.73887 }, { name: 'Thingdawl', lat: 24.16071, lon: 92.69349 },
-                { name: 'Thingthelh', lat: 24.17065, lon: 92.79963 }, { name: 'Vairengte', lat: 24.50032, lon: 92.76388 },
-                { name: 'Zanlawn', lat: 23.97852, lon: 92.71863 }, { name: 'S. Chhimluang', lat: 24.23577, lon: 92.59131 },
-                { name: 'Zodin', lat: 24.14635, lon: 92.57042 }, { name: 'Rengtekawn', lat: 24.24378, lon: 92.68636 },
-                { name: 'Gosen veng', lat: 24.24694, lon: 92.69365 }
+            { name: 'Bualpui North', lat: 24.09464, lon: 92.68256 }, { name: 'Buhchangphai', lat: 24.33581, lon: 92.65671 },
+            { name: 'Bukpui', lat: 24.08495, lon: 92.79414 }, { name: 'Bukvannei', lat: 24.29745, lon: 92.64113 },
+            { name: 'Hortoki', lat: 24.06256, lon: 92.59937 }, { name: 'Kawnpui', lat: 24.04, lon: 92.67889 },
+            { name: 'Khamrang', lat: 23.93383, lon: 92.65453 }, { name: 'Kolasib', lat: 24.22396, lon: 92.68 },
+            { name: 'Lungdai', lat: 23.88065, lon: 92.74031 }, { name: 'Lungmuat', lat: 23.96759, lon: 92.77998 },
+            { name: 'Meidum', lat: 24.17742, lon: 92.57615 }, { name: 'Mualkhang', lat: 23.89796, lon: 92.67426 },
+            { name: 'N. Chawnpui', lat: 24.37488, lon: 92.77978 }, { name: 'N. Chhimluang', lat: 24.38689, lon: 92.71726 },
+            { name: 'New Builum', lat: 24.24249, lon: 92.69339 }, { name: 'Nisapui', lat: 23.93387, lon: 92.75716 },
+            { name: 'North Chaltlang', lat: 24.02675, lon: 92.76832 }, { name: 'North Hlimen', lat: 24.23397, lon: 92.80741 },
+            { name: 'North Thinglian', lat: 24.31128, lon: 92.62357 }, { name: 'Pangbalkawn', lat: 24.20747, lon: 92.60701 },
+            { name: 'Phainuam', lat: 24.46842, lon: 92.78064 }, { name: 'Phaisen', lat: 24.38484, lon: 92.67983 },
+            { name: "Saihapui 'K'", lat: 24.27856, lon: 92.64152 }, { name: "Saihapui 'V'", lat: 24.47299, lon: 92.78644 },
+            { name: 'Saiphai', lat: 24.40314, lon: 92.79489 }, { name: 'Saipum', lat: 24.35294, lon: 92.84906 },
+            { name: 'Serkhan', lat: 23.91147, lon: 92.73887 }, { name: 'Thingdawl', lat: 24.16071, lon: 92.69349 },
+            { name: 'Thingthelh', lat: 24.17065, lon: 92.79963 }, { name: 'Vairengte', lat: 24.50032, lon: 92.76388 },
+            { name: 'Zanlawn', lat: 23.97852, lon: 92.71863 }, { name: 'S. Chhimluang', lat: 24.23577, lon: 92.59131 },
+            { name: 'Zodin', lat: 24.14635, lon: 92.57042 }, { name: 'Rengtekawn', lat: 24.24378, lon: 92.68636 },
+            { name: 'Gosen veng', lat: 24.24694, lon: 92.69365 }
         ];
 
         const BOUNDS = { minLat: 23.8, maxLat: 24.55, minLon: 92.5, maxLon: 92.87 };
@@ -160,7 +167,6 @@
             const rain = d.rain_1h || 0;
             
             // Priority: Red (4) > Orange (3) > Yellow (2) > Green (1)
-            // Wind thresholds
             if (wind >= 62 || rain >= 204.5) return { level: 4, color: '#ef4444', label: 'RED ALERT(TAKE ACTION)' };
             if (wind >= 52 || rain >= 115.6) return { level: 3, color: '#f97316', label: 'ORANGE ALERT(BE PREPARED)' };
             if (wind >= 30 || rain >= 15.6) return { level: 2, color: '#eab308', label: 'YELLOW ALERT(BE UPDATED)' };
@@ -204,7 +210,6 @@
                     return data;
                 });
 
-                // Sort by adversity level descending (Severe on top)
                 weatherData.sort((a, b) => b.adversity.level - a.adversity.level);
 
                 const forecastPromises = VILLAGES.map(v => 
@@ -387,7 +392,6 @@
             }
         }
 
-        // Navigation and View Handlers
         document.getElementById('nav-live').onclick = (e) => {
             currentTab = 'live';
             document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('nav-active', 'text-white'));
@@ -433,7 +437,6 @@
         document.getElementById('refresh-btn').onclick = fetchData;
 
         window.onload = fetchData;
-        // Auto-refresh every 5 minutes
         setInterval(fetchData, 300000);
     </script>
 </body>
